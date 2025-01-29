@@ -24,13 +24,13 @@ interface Message {
 
 function Chat() {
     const [inputText, setInputText] = useState<string>("");
-    const [message, setMessage] = useState<any[]>([]);
+    const [message, setMessage] = useState<Message[]>([]);
     const channelName = useAppSelector((state) => state.channel.channelName);
     const channelId = useAppSelector((state) => state.channel.channelId);
     const user = useAppSelector((state) => state.user.user)
 
     useEffect(() => {
-        let collectionRef = collection (
+        const collectionRef = collection (
             db, 
             "channels", 
             String(channelId),
@@ -42,7 +42,7 @@ function Chat() {
         );
 
         onSnapshot(collectionRefOrderBy, (snapshot) => {
-            let results: Message[] = [];
+            const results: Message[] = [];
             snapshot.docs.forEach((doc) => {
                 results.push({
                     timestamp: doc.data().timestamp,

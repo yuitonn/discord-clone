@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react';
 import { DocumentData, Query, collection, query } from 'firebase/firestore';
 import { onSnapshot } from 'firebase/firestore';

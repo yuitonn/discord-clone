@@ -1,4 +1,4 @@
-import React, { use, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import '../../globals.css';
 import { DocumentData } from 'firebase/firestore';
 import { useAppDispatch } from '@/app/hooks';

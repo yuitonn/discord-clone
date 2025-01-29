@@ -16,7 +16,7 @@ const Sidebar = () => {
     const user = useAppSelector((state) => state.user);
     const { documents: channels } = useCollection("channels");
     const addChannel = async () => {
-        let channelName: string | null = prompt("新しいチャンネルを作成します");
+        const channelName: string | null = prompt("新しいチャンネルを作成します");
         if (channelName) {
             await addDoc(collection(db, "channels"), {
                 channelName: channelName,
